@@ -78,9 +78,11 @@ evenness_data$freq.dep <- as.factor(evenness_data$freq.dep)
   geom_smooth()+
   labs(x=expression(paste('|',P[A],'-',P[B],'|')),
        y=paste('Pielou','\'s', 'evenness'))+
-  scale_x_continuous(breaks = c(0,1))+
+  scale_x_continuous(breaks = c(0,1.0))+
   ylim(c(0,1))+
   scale_color_lancet()+
+  geom_vline(aes(xintercept=0.25),linetype='dashed')+
+  geom_vline(aes(xintercept=0.5),linetype='dashed')+
   theme_bw()+
   theme(panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
@@ -187,7 +189,8 @@ freq.species.1$rate.c <- as.factor(freq.species.1$rate.c)
         geom_smooth()+
         ylim(0,16.7)+
         scale_x_continuous(breaks = c(1:10)*2)+
-        labs(y='Frequency (%)')+
+        labs(x='Generation',
+             y='Frequency (%)')+
         scale_color_lancet()+
         theme_bw()+
         theme(panel.grid.major.x = element_blank(),
