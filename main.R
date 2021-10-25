@@ -100,7 +100,7 @@ ggsave('Figure 7b.png',figure_alpha,dpi=300,width = 16, height = 12,units='cm')
 freq.mat <- matrix(ncol=0,nrow=num.species)
 
 Pr.As <- c()
-for (i in 1:1000){
+for (i in 1:100){
   #The probability of the secreted CH4-derived carbon being A
   Pr.A <- runif(1)
   #The probability of the secreted CH4-derived carbon being B
